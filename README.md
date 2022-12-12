@@ -1,5 +1,6 @@
 # SY_Notify
 
+![noty](https://user-images.githubusercontent.com/89760730/207020650-3831987e-d646-400c-91b8-4185f9ac738d.PNG)
 
 1. To display a notification you should call it like below:
    1. Using Client Side:
