@@ -28,7 +28,7 @@
    2. Open file `styles.css`
    3. Change this lines (only value!): `content: "\f00c";`
 
-## IF YOU NEED TO ADD THIS NOTIFICATION AS DEFAULT IN ESX LEGACY ADD THE GIVEN CODE IN @es_extended/client/function.lua
+# IF YOU NEED TO ADD THIS NOTIFICATION AS DEFAULT IN ESX LEGACY ADD THE GIVEN CODE IN @es_extended/client/function.lua
 
 ```lua
    function ESX.ShowNotification(message, type, length)
