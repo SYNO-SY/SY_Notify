@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap%22");
+body {
+    margin-top: 40vh;  /*---[ CHANGING NOTIFY (Y) POSITION ]---*/
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.notify {
+    width: 80px;
+    margin-left: 95vw;  /*---[ CHANGING NOTIFY (X) POSITION ]---*/
+}
+
+.wrapper {
+    width: 100px;
+    height: auto;
+    background-color: #1e1e1e;
+    float: right;
+
+}
+
+.main {
+    margin: 12px 16px 12px 65px;
+    position: relative;
+}
+
+.main::before {
+    top: calc(50% - 13px); 
+    left: -50px;
+    position: absolute;
+    background: #66ffcc5b;
+    padding: 15px;
+    width: 0.85vw; 
+    height: 0.85vw;
+    font-size: 17px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-left: -10px; 
+    margin-top: -10px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/*---[ SUCCESS NOTIFY ]---*/
+
+.success-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00c";
+    color: #ffffff;
+    animation: animate 2s infinite linear;
+    animation: float 2s ease-in-out infinite;
+}
+
+.success {
+    background-color: rgba(57, 157, 44, 0.411);
+    border: 2px solid rgb(110, 237, 112);
+    text-shadow: 0 0 0.5em rgb(110, 237, 131);
+    box-shadow: 0 0 0.5em rgb(110, 237, 127);
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+/*---[ INFORMATION NOTIFY ]---*/
+
+.info-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0f3";
+    color: #ffffff;
+    animation: animate 2s infinite linear;
+    animation: float 2s ease-in-out infinite;
+}
+
+.info {
+    background-color: rgba(44, 157, 157, 0.411);
+    border: 2px solid rgb(110,237,237);
+    text-shadow: 0 0 0.5em rgb(110,237,237);
+    box-shadow: 0 0 0.5em rgb(110,237,237);
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+
+/*---[ WARNING NOTIFY ]---*/
+
+.warning-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
+    color: #ffc107;
+    animation: animate 2s infinite linear;
+    animation: float 2s ease-in-out infinite;
+}
+
+.warning {
+    background-color: rgba(157, 150, 44, 0.411);
+    border: 2px solid rgb(237, 235, 110);
+    text-shadow: 0 0 0.5em rgb(237, 231, 110);
+    box-shadow: 0 0 0.5em rgb(233, 237, 110);
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+/*---[ ERROR NOTIFY ]---*/
+
+
+.error-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f00d";
+    color: #ff2121;
+    animation: animate 2s infinite linear;
+    animation: float 2s ease-in-out infinite;
+}
+
+.error {
+    background-color: rgba(157, 44, 44, 0.411);
+    border: 2px solid rgb(237, 110, 110);
+    text-shadow: 0 0 0.5em rgb(237, 110, 110);
+    box-shadow: 0 0 0.5em rgb(237, 110, 110);
+    box-shadow: 0 0 40px #00000069;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 5px 5px 5px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+
+/*animation -- right now not using added for testing. */
+
+@keyframes animate {
+    0%,
+    100% {
+        color: lawngreen;
+    }
+    25% {
+        color: deeppink ;
+    }
+    50% {
+        color: deepskyblue;
+    }
+    75% {
+        color: white;
+    }
+}
+
+@keyframes float {
+    0%{
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
