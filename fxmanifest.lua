@@ -8,7 +8,7 @@ version '1.0'
 
 lua54 'yes'
 
-ui_page 'html/ui.html'
+ui_page 'html/index.html'
 
 client_scripts {
 	'client.lua',
