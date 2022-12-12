@@ -48,5 +48,3 @@ replace it with
       end
    end
 ```
-
-   
