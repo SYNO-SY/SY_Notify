@@ -11,11 +11,11 @@ lua54 'yes'
 ui_page 'html/index.html'
 
 client_scripts {
-	'client.lua',
+   'client.lua',
 }
 
 files {
-	'html/*.*'
+    'html/*.*'
 }
 
 export 'Alert'
