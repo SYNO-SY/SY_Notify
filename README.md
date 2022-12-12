@@ -1,4 +1,4 @@
-#SY_Notify
+# SY_Notify
 
 
 1. To display a notification you should call it like below:
