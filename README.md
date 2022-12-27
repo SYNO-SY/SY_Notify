@@ -50,4 +50,4 @@ replace it with
    end
 ```
 ## TODO
-- add gta v color code.
+- add color code.
