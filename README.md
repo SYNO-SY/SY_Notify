@@ -4,12 +4,13 @@
 
 1. To display a notification you should call it like below:
    1. Using Client Side:
-      exports['SY_Notify']:Alert("Title", "Message", Time, 'type')
-
+    ```lua
+       exports['SY_Notify']:Alert("Title", "Message", Time, 'type')
+    ```
    2. Using Server Side:
-     TriggerClientEvent('SY_Notify:Alert', source, "Title", "Message", Time, 'type')
-
-
+    ```lua 
+       TriggerClientEvent('SY_Notify:Alert', source, "Title", "Message", Time, 'type')
+    ```
 2. To set the notification display time, use:
    1. 1000 - `[1 second]`
    2. 2000 - `[2 seconds]`
