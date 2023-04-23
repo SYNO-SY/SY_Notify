@@ -1,7 +1,9 @@
 # SY_Notify
+![Notification-UI](https://user-images.githubusercontent.com/89760730/233840565-3baaad49-52b0-4a5c-9d0b-97be0be92efe.png)
+
 ![Screenshot 2023-04-23 102748](https://user-images.githubusercontent.com/89760730/233840557-de7ddd97-6e9e-4553-8fd7-0ff71660861c.png)
 
-![Notification-UI](https://user-images.githubusercontent.com/89760730/233840565-3baaad49-52b0-4a5c-9d0b-97be0be92efe.png)
+
 
 
 1. To display a notification you should call it like below:
