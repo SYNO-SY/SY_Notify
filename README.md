@@ -31,11 +31,6 @@
    3. warning
    4. error
 
-4. To change the icon of notification, use:
-   1. Icon Library: https://fontawesome.com/v5/cheatsheet
-   2. Open file `styles.css`
-   3. Change this lines (only value!): `content: "\f00c";`
-
 5. IF YOU NEED TO ADD THIS NOTIFICATION AS DEFAULT IN ESX LEGACY ADD THE GIVEN CODE IN @es_extended/client/function.lua
 
 ```lua
