@@ -1,0 +1,58 @@
+body {
+  background-color: transparent;
+  color: rgb(232, 232, 232);
+  font-family: quicksand;
+  overflow: hidden;
+}
+.container-fluid {
+  display: none;
+}
+.BaseCircle {
+  position: relative;
+  width: 3.5vh !important;
+  height: 3.5vh !important;
+  margin: 0.3vh;
+  float: left;
+  border-radius: 50%;
+  background: transparent;
+}
+
+strong {
+  letter-spacing: 1px;
+  text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;
+}
+
+.toast-header {
+  border-radius: 20px;
+}
+.color {
+  background: linear-gradient(20deg, rgba(255, 242, 0, 0.21), rgb(0, 0, 0));
+  color: #f0d50d;
+  color: rgba(0, 0, 0, 0.514);
+}
+
+#top-left,
+#top-center,
+#top-right,
+#middle-left,
+#middle-right,
+#bottom-left,
+#bottom-center,
+#bottom-right {
+  border-radius: 20px;
+  border: 1px dashed rgb(231, 231, 231);
+}
+
+#toaster,
+#toaster-header {
+  border-color: #000000;
+  border-radius: 20px;
+  background-color: #28282882;
+}
+#toaster:hover {
+  background-color: #4a4a4aa1;
+}
+
+.p-text {
+  color: beige;
+}
