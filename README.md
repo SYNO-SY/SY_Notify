@@ -3,12 +3,9 @@
 
 
 ![Notification-UI](https://user-images.githubusercontent.com/89760730/233840565-3baaad49-52b0-4a5c-9d0b-97be0be92efe.png)
+
+
 ![Noti-Setting](https://user-images.githubusercontent.com/89760730/234043343-a3402e7b-e702-4106-88ff-c04dbe07f3e0.png)
-
-
-
-
-
 
 1. To display a notification you should call it like below:
    1. Using Client Side:
