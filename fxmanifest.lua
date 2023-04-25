@@ -5,7 +5,7 @@ game        'gta5'
 
 name        'SY_NOTIFY'
 author      '𝐒 𝐘 𝐍 𝐎#1760'
-version     '2.0'
+version     '2.1'
 license     'GNU General Public License v3.0'
 repository  'https://github.com/SYNO-SY/SY_Notify'
 description 'A Fivem Advanced Notification System'
