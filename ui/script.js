@@ -130,38 +130,37 @@ function OpenNotify(
   //var PoSition
   if (position === "top-right") {
     var PoSition = "top-0 end-0";
-    var anim = "animate__fadeInRightBig";
-    var anim_fadeout = "animate__fadeOutRightBig";
+    var anim = "animate__fadeInRight";
+    var anim_fadeout = "animate__fadeOutRight";
   } else if (position === "top-center") {
     var PoSition = "top-0 start-50 translate-middle-x";
-    var anim = "animate__fadeInDownBig";
-    var anim_fadeout = "animate__fadeOutUpBig";
+    var anim = "animate__fadeInDown";
+    var anim_fadeout = "animate__fadeOutUp";
   } else if (position === "top-left") {
     var PoSition = "top-0 start-0";
-    var anim = "animate__fadeInLeftBig";
-    var anim_fadeout = "animate__fadeOutLeftBig";
+    var anim = "animate__fadeInLeft";
+    var anim_fadeout = "animate__fadeOutLeft";
   } else if (position === "middle-right") {
     var PoSition = "top-50 end-0 translate-middle-y";
     var anim = "animate__fadeInRight";
     var anim_fadeout = "animate__fadeOutRight";
   } else if (position === "middle-left") {
     var PoSition = "top-50 start-0 translate-middle-y";
-    var anim = "animate__fadeInLeftBig";
-    var anim_fadeout = "animate__fadeOutLeftBig";
+    var anim = "animate__fadeInLeft";
+    var anim_fadeout = "animate__fadeOutLeft";
   } else if (position === "bottom-right") {
     var PoSition = "bottom-0 end-0";
-    var anim = "animate__fadeInRightBig";
-    var anim_fadeout = "animate__fadeOutRightBig";
+    var anim = "animate__fadeInRight";
+    var anim_fadeout = "animate__fadeOutRight";
   } else if (position === "bottom-center") {
     var PoSition = "bottom-0 start-50 translate-middle-x";
-    var anim = "animate__fadeInUpBig";
-    var anim_fadeout = "animate__fadeOutDownBig";
+    var anim = "animate__fadeInUp";
+    var anim_fadeout = "animate__fadeOutDown";
   } else if (position === "bottom-left") {
     var PoSition = "bottom-0 start-0";
-    var anim = "animate__fadeInLeftBig";
-    var anim_fadeout = "animate__fadeOutLeftBig";
+    var anim = "animate__fadeInLeft";
+    var anim_fadeout = "animate__fadeOutLeft";
   }
-   console.log(PoSition)
   $(`#containerclass`).addClass(PoSition);
   var NotiFication = `
   <div class="animate__animated ${anim}" id="anim-class-${number}">
