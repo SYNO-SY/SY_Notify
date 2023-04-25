@@ -1,3 +1,8 @@
+:root {
+  --animate-duration: 500ms;
+  --animate-delay: 0.1s;
+}
+
 body {
   background-color: transparent;
   color: rgb(232, 232, 232);
