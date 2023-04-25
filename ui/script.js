@@ -130,24 +130,41 @@ function OpenNotify(
   //var PoSition
   if (position === "top-right") {
     var PoSition = "top-0 end-0";
-   } else if (position === "top-center") {
-     var PoSition = "top-0 start-50 translate-middle-x";
-   } else if (position === "top-left"){
-     var PoSition = "top-0 start-0";
-   }else if (position === "middle-right"){
-     var PoSition = "top-50 end-0 translate-middle-y";
-   }else if (position === "middle-left"){
-     var PoSition = "top-50 start-0 translate-middle-y";
-   }else if (position === "bottom-right"){
-     var PoSition = "bottom-0 end-0";
-   }else if (position === "bottom-center"){
-     var PoSition = "bottom-0 start-50 translate-middle-x";
-   }else if (position === "bottom-left"){
-     var PoSition = "bottom-0 start-0";
-   }
+    var anim = "animate__fadeInRightBig";
+    var anim_fadeout = "animate__fadeOutRightBig";
+  } else if (position === "top-center") {
+    var PoSition = "top-0 start-50 translate-middle-x";
+    var anim = "animate__fadeInDownBig";
+    var anim_fadeout = "animate__fadeOutUpBig";
+  } else if (position === "top-left") {
+    var PoSition = "top-0 start-0";
+    var anim = "animate__fadeInLeftBig";
+    var anim_fadeout = "animate__fadeOutLeftBig";
+  } else if (position === "middle-right") {
+    var PoSition = "top-50 end-0 translate-middle-y";
+    var anim = "animate__fadeInRight";
+    var anim_fadeout = "animate__fadeOutRight";
+  } else if (position === "middle-left") {
+    var PoSition = "top-50 start-0 translate-middle-y";
+    var anim = "animate__fadeInLeftBig";
+    var anim_fadeout = "animate__fadeOutLeftBig";
+  } else if (position === "bottom-right") {
+    var PoSition = "bottom-0 end-0";
+    var anim = "animate__fadeInRightBig";
+    var anim_fadeout = "animate__fadeOutRightBig";
+  } else if (position === "bottom-center") {
+    var PoSition = "bottom-0 start-50 translate-middle-x";
+    var anim = "animate__fadeInUpBig";
+    var anim_fadeout = "animate__fadeOutDownBig";
+  } else if (position === "bottom-left") {
+    var PoSition = "bottom-0 start-0";
+    var anim = "animate__fadeInLeftBig";
+    var anim_fadeout = "animate__fadeOutLeftBig";
+  }
    console.log(PoSition)
   $(`#containerclass`).addClass(PoSition);
   var NotiFication = `
+  <div class="animate__animated ${anim}" id="anim-class-${number}">
     <div class = "notify-${number} pt-3 mx-2 my-3">
     <div class="toast show" style="${toast}" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header py-1 px-0" style="border-radius: 0px 0px 50px 50px;${toastheader}">
@@ -159,7 +176,8 @@ function OpenNotify(
         ${textmsg}
       </div>
     </div>
-    </div>`;
+    </div>
+   </div>`;
   $("#notify").append(NotiFication);
   Progressbar = new ProgressBar.Circle(`#Progressbar-${number}`, {
     color: color,
@@ -171,12 +189,10 @@ function OpenNotify(
   });
   Progressbar.animate(100 / 100);
   setTimeout(function () {
+    $(`#anim-class-${number}`).removeClass(anim).addClass(anim_fadeout);
     $(`.notify-${number}`).fadeOut("slow");
     $(`#Progressbar-${number}`).fadeOut("slow");
   }, time);
-  //setTimeout(function () {
-  //  $("#containerclass").removeClass(PoSition);
-  //}, time+1500);
 }
 
 function OpenSetting(position) { 
