@@ -4,7 +4,6 @@ ESX = exports["es_extended"]:getSharedObject()
 
 function Alert(title, message, time, messagetype)
     ESX.TriggerServerCallback('SY_Notify:getMeta', function(position)
-        print(position)
         if type(messagetype) ~= "string" then
             messagetype = 'info'
         end
