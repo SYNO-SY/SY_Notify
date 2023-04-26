@@ -9,7 +9,7 @@
   - [ESX](https://github.com/esx-framework/esx_core)
   - [oxmysql](https://github.com/overextended/oxmysql)
   
-#Installation
+# Installation
   - Download the file and put it in the resource directory
   - Install Sql
     ```sql
