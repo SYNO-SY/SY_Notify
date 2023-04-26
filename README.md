@@ -66,4 +66,6 @@ replace it with
    end
 ```
 ## TODO
+- add more conifg.
+- support for QBox,QBCore.
 - add color code.
