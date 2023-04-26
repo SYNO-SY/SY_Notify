@@ -5,6 +5,23 @@
    
 <kbd><img src="https://user-images.githubusercontent.com/89760730/234043343-a3402e7b-e702-4106-88ff-c04dbe07f3e0.png" /></kbd>
 
+# Dependency
+  - [ESX](https://github.com/esx-framework/esx_core)
+  - [oxmysql](https://github.com/overextended/oxmysql)
+  
+#Installation
+  - Download the file and put it in the resource directory
+  - Install Sql
+    ```sql
+      CREATE TABLE IF NOT EXISTS `sy_notify` (
+     `identifier` varchar(65) DEFAULT NULL,
+     `position` longtext DEFAULT NULL,
+      UNIQUE KEY `identifier` (`identifier`) USING HASH
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    ```
+  - Rename the Folder to SY_Notify.
+  - Add ```ensure SY_Notify``` in you're server.cfg
+
 1. To display a notification you should call it like below:
    1. Using Client Side:
     ```lua
