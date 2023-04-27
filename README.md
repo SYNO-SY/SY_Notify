@@ -5,6 +5,9 @@
    
 <kbd><img src="https://user-images.githubusercontent.com/89760730/234043343-a3402e7b-e702-4106-88ff-c04dbe07f3e0.png" /></kbd>
 
+
+## [QBCore-Version SY_Notify](https://github.com/SYNO-SY/SY_Notify-QBCore)
+
 # Dependency
   - [ESX](https://github.com/esx-framework/esx_core)
   - [oxmysql](https://github.com/overextended/oxmysql)
