@@ -18,22 +18,7 @@ AddEventHandler('SY_Notify:setMeta', function(positiondata)
     end)
 end)
 
-RegisterNetEvent('SY_Notify:getMeta')
-AddEventHandler('SY_Notify:getMeta', function(positiondata, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    MySQL.query('SELECT * FROM sy_notify WHERE identifier = ?', {xPlayer.identifier}, function(result)
-        if result then
-            for i = 1, #result do
-                local row = result[i]
-                print(row.position)
-                cb(row.position)
-            end
-        end
-    end)
-
-end)
-
-ESX.RegisterServerCallback('SY_Notify:getMeta', function(src, cb, param1, param2)
+ESX.RegisterServerCallback('SY_Notify:getMeta', function(src, cb)
     local xPlayer = ESX.GetPlayerFromId(src)
     local result = MySQL.query.await('SELECT * FROM sy_notify WHERE identifier = ?', {xPlayer.identifier})
     if result[1] ~= nil then
