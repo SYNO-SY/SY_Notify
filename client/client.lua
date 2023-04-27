@@ -1,7 +1,5 @@
 ESX = exports["es_extended"]:getSharedObject()
 
---local notify = true
-
 function Alert(title, message, time, messagetype)
     ESX.TriggerServerCallback('SY_Notify:getMeta', function(position)
         if type(messagetype) ~= "string" then
@@ -28,7 +26,6 @@ function Alert(title, message, time, messagetype)
 end
 RegisterCommand(Config.Settingcommand, function()
     ESX.TriggerServerCallback('SY_Notify:getMeta', function(position)
-        print(position)
         SetNuiFocus(true, true)
         SendNUIMessage({
         action = 'opensetting',
@@ -56,7 +53,7 @@ exports('Alert', Alert)
 
 ---[ EXAMPLE NOTIFY (command below code) ]---
 
-RegisterCommand('noty1', function()
+--[[RegisterCommand('noty1', function()
     exports['SY_Notify']:Alert("SUCCESS", "This is TEST MSG", 7000, 'success')
 end)
 RegisterCommand('noty2', function()
@@ -74,6 +71,4 @@ RegisterCommand('test', function()
     exports['SY_Notify']:Alert("INFORMATION", "This is TEST MSG", 5000, 'info')
     exports['SY_Notify']:Alert("ERROR", "This is TEST MSG", 5000, 'error')
     exports['SY_Notify']:Alert("WARNING", "This is TEST MSG", 5000, 'warning')
-end)
-
-
+end)]]
