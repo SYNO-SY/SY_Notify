@@ -1,5 +1,3 @@
-
-ESX = nil
 ESX = exports["es_extended"]:getSharedObject()
 
 RegisterNetEvent('SY_Notify:setMeta')
