@@ -254,7 +254,7 @@ $("#bottom-right").on("click", function (e) {
 
 function postext(data) {
   $("#position-text").replaceWith(
-    `<h3 class = "text-center px-2 py-2" id="position-text" style = "text-transform: uppercase; border:1px solid white;border-radius:10px">${data}</h3>`
+    `<h3 class = "text-center px-2 py-2" id="position-text" style = "text-transform: uppercase; border:1px solid white;border-radius:10px;color: #00f4f4cb;text-shadow: rgb(185, 185, 185) 1px 0px 15px;background-color: rgba(19, 204, 255, 0.336);">${data}</h3>`
   );
 }
 
