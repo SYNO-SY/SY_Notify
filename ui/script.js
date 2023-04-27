@@ -1,5 +1,5 @@
 $(function () {
-  var sound = new Audio("sound1.mp3");
+  var sound = new Audio("sound.mp3");
   sound.volume = 0.5;
   
   window.addEventListener("message", function (e) {
