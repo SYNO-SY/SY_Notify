@@ -12,11 +12,11 @@ $(function () {
         var color = "#0df04d";
         var align = e.data.position;
         var toast =
-          "background: linear-gradient(20deg, rgb(4 255 79 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+          "background: linear-gradient(20deg, rgb(19 255 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
         var toastheader =
-          "background: linear-gradient(20deg, rgb(4 255 79 / 21%), rgb(0, 0, 0));border-radius:20px 20px 0px 0px;border: transparent;";
+          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
         var toastbody =
-          "background: linear-gradient(20deg, rgb(4 255 79 / 21%), rgb(0, 0, 0));border: transparent;font-size:18px;border-radius: 0px 0px 20px 20px;";
+          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
         OpenNotify(
           icon,
           title,
@@ -36,11 +36,11 @@ $(function () {
         var color = "#0dcaf0";
         var align = e.data.position;
         var toast =
-          "background: linear-gradient(20deg, rgb(4 216 255 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+          "background: linear-gradient(20deg, rgb(2 99 255 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
         var toastheader =
-          "background: linear-gradient(20deg, rgb(4 216 255 / 21%), rgb(0, 0, 0));border-radius:20px 20px 0px 0px;border: transparent;";
+          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
         var toastbody =
-          "background: linear-gradient(20deg, rgb(4 216 255 / 21%), rgb(0, 0, 0));border: transparent;font-size:18px; border-radius: 0px 0px 20px 20px;";
+          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
         OpenNotify(
           icon,
           title,
@@ -59,12 +59,12 @@ $(function () {
         var time = e.data.time;
         var color = "#f00d0d";
         var align = e.data.position;
-        var toast =
-          "background: linear-gradient(20deg, rgb(255 0 0 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+       var toast =
+          "background: linear-gradient(20deg, rgb(255 2 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
         var toastheader =
-          "background: linear-gradient(20deg, rgb(255 0 0 / 21%), rgb(0, 0, 0));border-radius:20px 20px 0px 0px;border: transparent;";
+          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
         var toastbody =
-          "background: linear-gradient(20deg, rgb(255 0 0 / 21%), rgb(0, 0, 0));border: transparent;font-size:18px;border-radius: 0px 0px 20px 20px;";
+          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
         OpenNotify(
           icon,
           title,
@@ -84,11 +84,11 @@ $(function () {
         var color = "#f0d50d";
         var align = e.data.position;
         var toast =
-          "background: linear-gradient(20deg, rgb(255 242 0 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+          "background: linear-gradient(20deg, rgb(255 255 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
         var toastheader =
-          "background: linear-gradient(20deg, rgb(255 242 0 / 21%), rgb(0, 0, 0));border-radius:20px 20px 0px 0px;border: transparent;";
+          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
         var toastbody =
-          "background: linear-gradient(20deg, rgb(255 242 0 / 21%), rgb(0, 0, 0));border: transparent;font-size:18px; border-radius: 0px 0px 20px 20px;";
+          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
         OpenNotify(
           icon,
           title,
@@ -101,7 +101,32 @@ $(function () {
         );
         sound.play();
       }
-    }
+    }else if (e.data.type == "announcement") {
+        var icon = "fa-solid fa-bullhorn";
+        var title = e.data.title;
+        var msg = e.data.message;
+        var time = e.data.time;
+        var color = "#f0990d";
+        var align = e.data.position;
+        var toast =
+          "background: linear-gradient(20deg, rgb(255 137 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+        var toastheader =
+          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
+        var toastbody =
+          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
+        OpenNotify(
+          icon,
+          title,
+          msg,
+          time,
+          color,
+          toast,
+          toastheader,
+          toastbody,
+          align
+        );
+        sound.play();
+      }
     if (e.data.action == "opensetting") {
       OpenSetting(e.data.position);
     }
@@ -166,12 +191,12 @@ function OpenNotify(
   <div class="animate__animated ${anim}" id="anim-class-${number}">
     <div class = "notify-${number} pt-3 mx-2 my-3">
     <div class="toast show" style="${toast}" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header py-1 px-0" style="border-radius: 0px 0px 50px 50px;${toastheader}">
+      <div class="toast-header py-0 px-0" style="border-radius: 0px 0px 50px 50px;${toastheader}">
       <i class="${icon} ms-2" style = "font-size:25px;color:${color}"></i>
       <strong class="me-auto mx-2" style = "font-size:25px;color:${color}">${title}</strong>
       <div id="Progressbar-${number}" class="BaseCircle m-2"></div>
       </div>
-      <div class="toast-body" style="${toastbody}">
+      <div class="toast-body py-2" style="${toastbody}">
         ${textmsg}
       </div>
     </div>
