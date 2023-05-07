@@ -46,6 +46,7 @@
    2. info
    3. warning
    4. error
+   5. announcement
 
 5. IF YOU NEED TO ADD THIS NOTIFICATION AS DEFAULT IN ESX LEGACY ADD THE GIVEN CODE IN @es_extended/client/function.lua
 
