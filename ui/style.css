@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Quicksand;
+  src: url(./font/Quicksand.ttf);
+}
+
 :root {
   --animate-duration: 500ms;
   --animate-delay: 0.1s;
@@ -6,7 +11,7 @@
 body {
   background-color: transparent;
   color: rgb(232, 232, 232);
-  font-family: quicksand;
+  font-family: Quicksand;
   overflow: hidden;
 }
 .container-fluid {
