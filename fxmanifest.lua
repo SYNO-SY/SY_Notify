@@ -1,19 +1,19 @@
-fx_version  'adamant'
+fx_version 'adamant'
 use_experimental_fxv2_oal 'yes'
-lua54       'yes'
-game        'gta5'
+lua54 'yes'
+game 'gta5'
 
-name        'SY_NOTIFY'
-author      '𝐒 𝐘 𝐍 𝐎#1760'
-version     '2.2'
-license     'GNU General Public License v3.0'
-repository  'https://github.com/SYNO-SY/SY_Notify'
+name 'SY_NOTIFY'
+author '𝐒 𝐘 𝐍 𝐎#1760'
+version '2.3'
+license 'GNU General Public License v3.0'
+repository 'https://github.com/SYNO-SY/SY_Notify'
 description 'A Fivem Advanced Notification System'
 
 ui_page 'ui/ui.html'
 
 shared_scripts {
-    'config.lua',
+	'config.lua',
 }
 
 client_scripts {
