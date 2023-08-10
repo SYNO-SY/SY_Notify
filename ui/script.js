@@ -1,9 +1,45 @@
+// the color codes example `i ~r~love~s~ donuts`
+const codes = {
+  "~r~": "red",
+  "~b~": "#378cbf",
+  "~g~": "green",
+  "~y~": "yellow",
+  "~p~": "purple",
+  "~c~": "grey",
+  "~m~": "#212121",
+  "~u~": "black",
+  "~o~": "orange",
+};
+
+const replaceColors = (str, obj) => {
+  let strToReplace = str;
+
+  for (let id in obj) {
+    strToReplace = strToReplace.replace(new RegExp(id, "g"), obj[id]);
+  }
+
+  return strToReplace;
+};
+
 $(function () {
   var sound = new Audio("sound.mp3");
   sound.volume = 0.5;
-  
+
   window.addEventListener("message", function (e) {
     if (e.data.action == "open") {
+      for (color in codes) {
+        const msg = e.data.message;
+        if (msg.includes(color)) {
+          let objArr = {};
+          objArr[color] = `<span style="color: ${codes[color]}">`;
+          objArr["~s~"] = "</span>";
+
+          let newStr = replaceColors(msg, objArr);
+
+          e.data.message = newStr;
+        }
+      }
+
       if (e.data.type == "success") {
         var icon = "fa-solid fa-circle-check";
         var title = e.data.title;
@@ -25,7 +61,8 @@ $(function () {
           color,
           toast,
           toastheader,
-          toastbody,align
+          toastbody,
+          align,
         );
         sound.play();
       } else if (e.data.type == "info") {
@@ -49,7 +86,8 @@ $(function () {
           color,
           toast,
           toastheader,
-          toastbody,align
+          toastbody,
+          align,
         );
         sound.play();
       } else if (e.data.type == "error") {
@@ -59,7 +97,7 @@ $(function () {
         var time = e.data.time;
         var color = "#f00d0d";
         var align = e.data.position;
-       var toast =
+        var toast =
           "background: linear-gradient(20deg, rgb(255 2 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
         var toastheader =
           "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
@@ -73,7 +111,8 @@ $(function () {
           color,
           toast,
           toastheader,
-          toastbody,align
+          toastbody,
+          align,
         );
         sound.play();
       } else if (e.data.type == "warning") {
@@ -97,36 +136,37 @@ $(function () {
           color,
           toast,
           toastheader,
-          toastbody,align
-        );
-        sound.play();
-      }
-    }else if (e.data.type == "announcement") {
-        var icon = "fa-solid fa-bullhorn";
-        var title = e.data.title;
-        var msg = e.data.message;
-        var time = e.data.time;
-        var color = "#f0990d";
-        var align = e.data.position;
-        var toast =
-          "background: linear-gradient(20deg, rgb(255 137 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
-        var toastheader =
-          "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
-        var toastbody =
-          "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
-        OpenNotify(
-          icon,
-          title,
-          msg,
-          time,
-          color,
-          toast,
-          toastheader,
           toastbody,
-          align
+          align,
         );
         sound.play();
       }
+    } else if (e.data.type == "announcement") {
+      var icon = "fa-solid fa-bullhorn";
+      var title = e.data.title;
+      var msg = e.data.message;
+      var time = e.data.time;
+      var color = "#f0990d";
+      var align = e.data.position;
+      var toast =
+        "background: linear-gradient(20deg, rgb(255 137 2 / 21%), rgb(0, 0, 0));border-radius:20px;border: transparent;";
+      var toastheader =
+        "border-radius: 0px 0px 50px 50px;background: transparent;border-radius: 20px 20px 0px 0px;border-bottom: 1px solid rgba(247, 255, 1, 0.042);";
+      var toastbody =
+        "border: transparent;font-size: 18px;border-radius: 0px 0px 20px 20px;text-shadow: rgba(255, 255, 255, 0.558) 1px 0 10px;";
+      OpenNotify(
+        icon,
+        title,
+        msg,
+        time,
+        color,
+        toast,
+        toastheader,
+        toastbody,
+        align,
+      );
+      sound.play();
+    }
     if (e.data.action == "opensetting") {
       OpenSetting(e.data.position);
     }
@@ -142,7 +182,7 @@ function OpenNotify(
   toast,
   toastheader,
   toastbody,
-  align
+  align,
 ) {
   var number = Math.floor(Math.random() * 1000 + 1);
   var icon = icon;
@@ -219,88 +259,89 @@ function OpenNotify(
   }, time);
 }
 
-function OpenSetting(position) { 
+function OpenSetting(position) {
   postext(position);
   if (position === "top-right") {
     var PoSition = "top-0 end-0";
-   } else if (position === "top-center") {
-     var PoSition = "top-0 start-50 translate-middle-x";
-   } else if (position === "top-left"){
-     var PoSition = "top-0 start-0";
-   }else if (position === "middle-right"){
-     var PoSition = "top-50 end-0 translate-middle-y";
-   }else if (position === "middle-left"){
-     var PoSition = "top-50 start-0 translate-middle-y";
-   }else if (position === "bottom-right"){
-     var PoSition = "bottom-0 end-0";
-   }else if (position === "bottom-center"){
-     var PoSition = "bottom-0 start-50 translate-middle-x";
-   }else if (position === "bottom-left"){
-     var PoSition = "bottom-0 start-0";
-   }
+  } else if (position === "top-center") {
+    var PoSition = "top-0 start-50 translate-middle-x";
+  } else if (position === "top-left") {
+    var PoSition = "top-0 start-0";
+  } else if (position === "middle-right") {
+    var PoSition = "top-50 end-0 translate-middle-y";
+  } else if (position === "middle-left") {
+    var PoSition = "top-50 start-0 translate-middle-y";
+  } else if (position === "bottom-right") {
+    var PoSition = "bottom-0 end-0";
+  } else if (position === "bottom-center") {
+    var PoSition = "bottom-0 start-50 translate-middle-x";
+  } else if (position === "bottom-left") {
+    var PoSition = "bottom-0 start-0";
+  }
   $("#containerclass").removeClass(PoSition);
-  $('.container-fluid').css("display", "block");
-  $('body').css({"background-color":"rgba(0, 0, 0, 0.514)"});
+  $(".container-fluid").css("display", "block");
+  $("body").css({ "background-color": "rgba(0, 0, 0, 0.514)" });
 }
-
 
 $("#top-left").on("click", function (e) {
   postext("top-left");
-  sendNUI('notify-position',"top-left");
+  sendNUI("notify-position", "top-left");
 });
 $("#top-right").on("click", function (e) {
   postext("top-right");
-  sendNUI('notify-position',"top-right");
+  sendNUI("notify-position", "top-right");
 });
 $("#top-center").on("click", function (e) {
   postext("top-center");
-  sendNUI('notify-position',"top-center");
+  sendNUI("notify-position", "top-center");
 });
 $("#middle-left").on("click", function (e) {
-  sendNUI('notify-position',"middle-left");
+  sendNUI("notify-position", "middle-left");
   postext("middle-left");
 });
 $("#middle-right").on("click", function (e) {
-  sendNUI('notify-position',"middle-right");
+  sendNUI("notify-position", "middle-right");
   postext("middle-right");
 });
 $("#bottom-left").on("click", function (e) {
-  sendNUI('notify-position',"bottom-left");
+  sendNUI("notify-position", "bottom-left");
   postext("bottom-left");
 });
 $("#bottom-center").on("click", function (e) {
-  sendNUI('notify-position',"bottom-center");
+  sendNUI("notify-position", "bottom-center");
   postext("bottom-center");
 });
 $("#bottom-right").on("click", function (e) {
-  sendNUI('notify-position',"bottom-right");
+  sendNUI("notify-position", "bottom-right");
   postext("bottom-right");
 });
 
 function postext(data) {
   $("#position-text").replaceWith(
-    `<h3 class = "text-center px-2 py-2" id="position-text" style = "text-transform: uppercase; border:1px solid white;border-radius:10px;color: #00f4f4cb;text-shadow: rgb(185, 185, 185) 1px 0px 15px;background-color: rgba(19, 204, 255, 0.336);">${data}</h3>`
+    `<h3 class = "text-center px-2 py-2" id="position-text" style = "text-transform: uppercase; border:1px solid white;border-radius:10px;color: #00f4f4cb;text-shadow: rgb(185, 185, 185) 1px 0px 15px;background-color: rgba(19, 204, 255, 0.336);">${data}</h3>`,
   );
 }
 
 document.addEventListener("keydown", (event) => {
   if (event.keyCode == 27 || event.keyCode === 36 || event.keyCode === 8) {
-    $('.container-fluid').css("display", "none");
-    $('body').css({"background-color":"transparent"});
-    sendNUI('close');
+    $(".container-fluid").css("display", "none");
+    $("body").css({ "background-color": "transparent" });
+    sendNUI("close");
   }
 });
 
-$('#quit').click(function () { 
-  $('.container-fluid').css("display", "none");
-  $('body').css({"background-color":"transparent"});
-  sendNUI('close');
+$("#quit").click(function () {
+  $(".container-fluid").css("display", "none");
+  $("body").css({ "background-color": "transparent" });
+  sendNUI("close");
 });
 
 function sendNUI(event, data, cb = () => {}) {
-	fetch(`https://${GetParentResourceName()}/${event}`, {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json; charset=UTF-8', },
-		body: JSON.stringify(data)
-	}).then(resp => resp.json()).then(resp => cb(resp));
+  fetch(`https://${GetParentResourceName()}/${event}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=UTF-8" },
+    body: JSON.stringify(data),
+  })
+    .then((resp) => resp.json())
+    .then((resp) => cb(resp));
 }

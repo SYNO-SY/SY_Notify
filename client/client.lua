@@ -22,15 +22,15 @@ function Alert(title, message, time, messagetype)
             position = position
         })
     end, position)
-        
 end
+
 RegisterCommand(Config.Settingcommand, function()
     ESX.TriggerServerCallback('SY_Notify:getMeta', function(position)
         SetNuiFocus(true, true)
         SendNUIMessage({
-        action = 'opensetting',
-        position = position
-    })
+            action = 'opensetting',
+            position = position
+        })
     end, position)
 end)
 
@@ -42,7 +42,7 @@ end)
 
 RegisterNUICallback("notify-position", function(data)
     local position = data
-    TriggerServerEvent('SY_Notify:setMeta',position )
+    TriggerServerEvent('SY_Notify:setMeta', position)
 end)
 
 RegisterNetEvent('SY_Notify:Alert', Alert)
@@ -65,11 +65,12 @@ end)
 RegisterCommand('noty4', function()
     exports['SY_Notify']:Alert("WARNING", "This is TEST MSG", 5000, 'warning')
 end)
+]]
 
 RegisterCommand('test', function()
-    exports['SY_Notify']:Alert("SUCCESS", "This is TEST sucess MSG", 5000, 'success')
+    exports['SY_Notify']:Alert("SUCCESS", "This is ~g~TEST sucess MSG~s~", 5000, 'success')
     exports['SY_Notify']:Alert("INFORMATION", "This is TEST Info MSG", 5000, 'info')
-    exports['SY_Notify']:Alert("ERROR", "This is TEST error MSG", 5000, 'error')
+    exports['SY_Notify']:Alert("ERROR", "This is ~r~TEST error MSG~s~", 5000, 'error')
     exports['SY_Notify']:Alert("WARNING", "This is TEST warning MSG", 5000, 'warning')
-    exports['SY_Notify']:Alert("ANNOUNCEMENT", "This is TEST announcement MSG", 5000, 'announcement') 
-end)]]
+    exports['SY_Notify']:Alert("ANNOUNCEMENT", "This is TEST announcement MSG", 5000, 'announcement')
+end)
