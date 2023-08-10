@@ -68,6 +68,4 @@ replace it with
       end
    end
 ```
-## TODO
-- add more conifg.
-- add color code.
+
